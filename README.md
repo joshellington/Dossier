@@ -19,5 +19,6 @@ Because bookmarklets are awesome and easy as pie (borrowed structure from [Pinbo
 - Data validation
 - Better search
 - More categories, multiple category support (option elements)
+- Category views
 - Analytics
 - Finish this README

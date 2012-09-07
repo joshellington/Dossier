@@ -19,7 +19,7 @@ $ ->
 
     false
 
-  $('h2 a').live 'click', ->
+  $('.article-link h2 a').live 'click', ->
     id = $(this).attr('data-link-id')
     url = $(this).attr('data-url')
 

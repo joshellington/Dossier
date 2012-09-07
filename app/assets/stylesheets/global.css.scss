@@ -207,7 +207,7 @@ form {
 
   div.field {
     margin-bottom:15px;
-    width:400px;
+    width:500px;
 
     @include breakpoint(max-width 479px) {
       width:auto;
@@ -218,17 +218,14 @@ form {
     @include transition (all 0.2s linear);
     display:block;
     font-family: $font;
-    width:400px;
+    width:100%;
     outline:0;
     border:1px solid $lightgrey;
     padding:5px 7px;
     font-size:15px;
 
-    @include breakpoint(max-width 479px) {
-      width:100%;
-    }
-
     &:focus {
+      border-color:$grey;
       @include box-shadow(0 0 10px 1px hsla(0, 0%, 0%, 0.05));
     }
   }

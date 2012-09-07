@@ -1,15 +1,16 @@
 
 
 $accent: #E1874D;
-$dark_accent: #86502E;
+$darkaccent: #86502E;
 $black: #222;
 $lightgrey: #eee;
 $grey: #aaa;
 $darkgrey: #777;
 
+$font: 'Karla', sans-serif;
 
 body {
-  font-family: 'Karla', sans-serif;
+  font-family: $font;
   margin:0;padding: 0;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -17,6 +18,10 @@ body {
 }
 
 h1,h2,h3,h4,h5,h6,p {margin:0;padding:0;}
+
+h2 {
+  font-size:26px;
+}
 
 div.container {
   @include outer-container;
@@ -29,7 +34,7 @@ a {
   text-decoration: none;
 
   &:hover {
-    color:$dark_accent;
+    color:$darkaccent;
   }
 }
 
@@ -59,7 +64,7 @@ header {
       text-decoration: none;
 
       &:hover {
-        background:$dark_accent;
+        background:$darkaccent;
         color:white;
       }
     }
@@ -155,7 +160,6 @@ article.link {
 
   &:hover div.info {
     color:$darkgrey;
-    /*border-bottom:5px solid $lightgrey;*/
   }
 }
 

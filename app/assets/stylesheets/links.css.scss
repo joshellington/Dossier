@@ -1,3 +1,54 @@
-// Place all the styles related to the Links controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+div.new-link {
+  padding:30px 0;
+}
+
+form.new_link {
+  padding:15px 0;
+
+  div.field {
+    margin-bottom:15px;
+    width:400px;
+  }
+
+  input, textarea {
+    @include transition (all 0.2s linear);
+    display:block;
+    font-family: $font;
+    width:400px;
+    outline:0;
+    border:1px solid $lightgrey;
+    padding:5px 7px;
+    font-size:15px;
+
+    &:focus {
+      @include box-shadow(0 0 10px 1px hsla(0, 0%, 0%, 0.05));
+    }
+  }
+
+  label {
+    display:block;
+    font-size:11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom:5px;
+    color:$darkgrey;
+
+    span {
+      font-size:9px;
+      float:right;
+    }
+  }
+
+  div.actions input {
+    background:$accent;
+    color:white;
+    cursor: pointer;
+    border:0;
+
+    &:hover {
+      background:$darkaccent;
+    }
+  }
+}

@@ -23,6 +23,12 @@ h2 {
   font-size:26px;
 }
 
+small {
+  font-size:11px;
+  color:$grey;
+  font-style: italic;
+}
+
 div.container {
   @include outer-container;
   padding:0 0 30px;
@@ -78,6 +84,26 @@ header {
       }
     }
   }
+}
+
+nav.breadcrumb {
+  background:$darkgrey;
+  padding:7px 14px;
+  font-size:11px;
+  color:white;
+
+  a {
+    color:white;
+    font-weight: bold;
+  }
+}
+
+p#notice {
+  background:$accent;
+  padding:7px 14px;
+  font-size:11px;
+  color:white;
+  font-weight:bold;
 }
 
 article.link {
@@ -167,13 +193,80 @@ article.link {
     }
   }
 
+  #disqus_thread {
+    padding:30px 0;
+  }
+
   &:hover div.info {
     color:$darkgrey;
   }
 }
 
+form {
+  padding:15px 0;
+
+  div.field {
+    margin-bottom:15px;
+    width:400px;
+
+    @include breakpoint(max-width 479px) {
+      width:auto;
+    }
+  }
+
+  input, textarea {
+    @include transition (all 0.2s linear);
+    display:block;
+    font-family: $font;
+    width:400px;
+    outline:0;
+    border:1px solid $lightgrey;
+    padding:5px 7px;
+    font-size:15px;
+
+    @include breakpoint(max-width 479px) {
+      width:auto;
+    }
+
+    &:focus {
+      @include box-shadow(0 0 10px 1px hsla(0, 0%, 0%, 0.05));
+    }
+  }
+
+  label {
+    display:block;
+    font-size:11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom:5px;
+    color:$darkgrey;
+
+    span {
+      font-size:9px;
+      float:right;
+    }
+  }
+
+  div.actions input {
+    background:$accent;
+    color:white;
+    width:auto;
+    display: inline-block;
+    cursor: pointer;
+    border:0;
+
+    &:hover {
+      background:$darkaccent;
+    }
+  }
+}
+
 div.page {
   padding:30px 0;
+
+  @include breakpoint(max-width 479px, 1) {
+    padding:30px 30px 0 30px;
+  }
 }
 
 footer {

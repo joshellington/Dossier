@@ -16,9 +16,16 @@
 
     <nav>
       <%= link_to 'New Link', new_link_path %>
-      <%= link_to 'Subscribe', '/subscribe' %>
+      <%= link_to 'Subscribe', new_subscriber_path %>
+      <%= link_to 'Search', search_path %>
     </nav>
   </header>
+
+  <nav class="breadcrumb"><%= render_breadcrumbs :separator => ' / ' %></nav>
+
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
 
   <%= yield %>
 

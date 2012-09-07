@@ -1,0 +1,14 @@
+<div class="page">
+  <h2>Search</h2>
+
+  <%= form_tag('/links/search', :method => 'get') do %>
+    <div class="field">
+      <%= text_field_tag :query %>
+    </div>
+
+    <div class="actions">
+      <%= submit_tag 'Go' %>
+    </div>
+  <% end %>
+
+</div>

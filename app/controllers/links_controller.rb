@@ -1,4 +1,6 @@
 class LinksController < ApplicationController
+  add_breadcrumb "Home", :root_path
+
   # GET /links
   # GET /links.json
   def index
@@ -15,9 +17,23 @@ class LinksController < ApplicationController
   def show
     @link = Link.find(params[:id])
 
+    add_breadcrumb @link.title, link_path(@link)
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @link }
+    end
+  end
+
+  def search
+    @query = params[:query]
+    @links = Link.where(["title LIKE :query", {:query => @query}])
+
+    add_breadcrumb 'Search results for "'+@query+'"', search_path(@query)
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @links }
     end
   end
 
@@ -25,6 +41,8 @@ class LinksController < ApplicationController
   # GET /links/new.json
   def new
     @link = Link.new
+
+    add_breadcrumb "New Link", new_link_path(@link)
 
     respond_to do |format|
       format.html # new.html.erb

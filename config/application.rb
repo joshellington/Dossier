@@ -61,5 +61,8 @@ module Dossier
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.action_mailer.delivery_method = :postmark
+    config.action_mailer.postmark_settings = { :api_key => "513235e9-390f-40b8-b995-91c3aac5e351" }
   end
 end

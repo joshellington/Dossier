@@ -27,10 +27,14 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'activerecord-periodic', :git => 'git://github.com/chochkov/activerecord-periodic.git'
+
 gem 'bourbon'
 gem 'jquery-rails'
 
+gem 'postmark-rails'
 gem 'activeadmin'
+gem 'breadcrumbs_on_rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

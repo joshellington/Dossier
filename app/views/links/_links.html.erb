@@ -6,7 +6,7 @@
       </a> -->
     </div>
 
-    <h2><%= link_to link.title, link.url %></h2>
+    <h2><%= link_to link.title, link.url, "data-url" => link.url, "data-link-id" => link.id %></h2>
     
     <% unless link.body.empty? %>
       <p><%= raw(link.body) %></p>
@@ -27,6 +27,10 @@
 
       <div class="info-data">
         <span class="vote-count"><%= link.vote_count %></span> votes &nbsp;/&nbsp;
+      </div>
+
+      <div class="info-data">
+        <span class="click-count"><%= link.click_count %></span> clicks &nbsp;/&nbsp;
       </div>
 
       <div class="info-data">

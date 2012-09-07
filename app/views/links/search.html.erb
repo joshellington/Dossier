@@ -1,0 +1,7 @@
+<% unless @links.empty? %>
+  <%= render 'links' %>
+<% else %>
+  <div class="page">
+    <h2>Sorry, no results. <%= link_to 'Try again?', search_path %></h2>
+  </div>
+<% end %>

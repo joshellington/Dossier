@@ -18,3 +18,13 @@ $ ->
     )
 
     false
+
+  $('h2 a').live 'click', ->
+    id = $(this).attr('data-link-id')
+    url = $(this).attr('data-url')
+
+    $.getJSON('/links/'+id+'/click', (d) ->
+      top.location.href = url
+    )
+
+    false

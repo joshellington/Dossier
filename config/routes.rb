@@ -3,10 +3,14 @@ Dossier::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
-  match 'subscribe' => 'pages#subscribe'
+  match 'search' => 'pages#search'
   match 'links/:id/vote/:type' => 'links#vote'
+  match 'links/:id/click' => 'links#click'
+  match 'links/search' => 'links#search'
+  match 'subscribers/newsletter' => 'subscribers#newsletter'
 
   resources :links
+  resources :subscribers
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

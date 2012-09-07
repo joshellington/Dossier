@@ -5,7 +5,7 @@
     </a> -->
   </div>
 
-  <h2><%= link_to @link.title, @link.url %></h2>
+  <h2><%= link_to @link.title, @link.url, "data-url" => @link.url, "data-link-id" => @link.id %> <span> &mdash; <%= @link.category.title %></span></h2>
   
   <% unless @link.body.empty? %>
     <p><%= raw(@link.body) %></p>
@@ -29,9 +29,15 @@
     </div>
 
     <div class="info-data">
+      <span class="click-count"><%= @link.click_count %></span> clicks &nbsp;/&nbsp;
+    </div>
+
+    <div class="info-data">
       <%= link_to "0 comments", link_path(@link, :anchor => "disqus_thread") %>
     </div>
   </div>
+
+  <div id="disqus_thread"></div>
 
   <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */

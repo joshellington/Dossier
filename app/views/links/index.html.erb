@@ -1,13 +1,36 @@
 <% @links.each do |link| %>
   <article class="link" data-url="<%= link.url %>">
-    <h6><%= link.created_at %></h6>
-    <h2><%= link_to link.title, link %></h2>
-    <p><%= link.body %></p>
+    <div class="vote-buttons">
+      <!-- <a href="/links/<%= link.id %>/vote/up">
+        <%= image_tag('plus-icon.png', :width => 24) %>
+      </a> -->
+    </div>
+
+    <h2><%= link_to link.title, link.url %></h2>
+    <% unless link.body.empty? %>
+      <p><%= raw(link.body) %></p>
+    <% end %>
     
     <div class="info">
-      <p><%= link.url %></p>
+      <div class="info-data">
+        <a href="/links/<%= link.id %>/vote/up" class="vote-button">vote</a> &nbsp;/&nbsp;
+      </div>
+
+      <div class="info-data">
+        <%= time_ago_in_words(link.created_at) %> ago &nbsp;/&nbsp;
+      </div>
+
+      <div class="info-data">
+        <%= url_format(link.url) %> &nbsp;/&nbsp;
+      </div>
+
+      <div class="info-data">
+        <span class="vote-count"><%= link.vote_count %></span> votes &nbsp;/&nbsp;
+      </div>
+
+      <div class="info-data">
+        12 comments
+      </div>
     </div>
   </article>
 <% end %>
-
-<%= link_to 'New Link', new_link_path %>

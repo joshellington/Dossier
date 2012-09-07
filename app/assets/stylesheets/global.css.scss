@@ -1,4 +1,171 @@
+
+
+$accent: #E1874D;
+$dark_accent: #86502E;
+$black: #222;
+$lightgrey: #eee;
+$grey: #aaa;
+$darkgrey: #777;
+
+
 body {
-  font-family: 'Dosis', sans-serif;
-  letter-spacing:1px;
+  font-family: 'Karla', sans-serif;
+  margin:0;padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+h1,h2,h3,h4,h5,h6,p {margin:0;padding:0;}
+
+div.container {
+  @include outer-container;
+  padding:0 0 30px;
+}
+
+a {
+  @include transition (all 0.2s linear);
+  color:$accent;
+  text-decoration: none;
+
+  &:hover {
+    color:$dark_accent;
+  }
+}
+
+header {
+  background:#000;
+  overflow: hidden;
+
+  h1 {
+    margin:0;
+    color:white;
+    padding:10px 14px;
+    font-size:13px;
+    float:left;
+  }
+
+  nav {
+    float:right;
+    display: block;
+    font-weight: bold;
+    font-size:11px;
+
+    a {
+      padding:12px 14px;
+      color:white;
+      display: block;
+      background:$accent;
+      text-decoration: none;
+
+      &:hover {
+        background:$dark_accent;
+        color:white;
+      }
+    }
+  }
+}
+
+article.link {
+  @include span-columns(12);
+  position: relative;
+  padding-top:30px;
+  @include transition (all 0.2s linear);
+
+  @include breakpoint(max-width 479px, 1) {
+    padding:30px 30px 0 30px;
+  }
+
+  h2 {
+    font-size:26px;
+    margin:0;
+    padding:0 0 15px 0;
+
+    @include breakpoint(max-width 479px) {
+      font-size:20px;
+    }
+
+    a {
+      color:$black;
+
+      &:hover {
+        color:$accent;
+      }
+    }
+
+    span {
+      font-size:11px;
+      font-weight:300;
+      color:$grey;
+    }
+  }
+
+  p {
+    font-size:16px;
+    line-height: 1.4;
+    padding-bottom:15px;
+  }
+
+  blockquote {
+    color:$darkgrey;
+    font-style: italic;
+    margin-top:0;
+    padding-left:15px;
+    border-left:5px solid $lightgrey;
+  }
+
+  div.info {
+    overflow: hidden;
+    font-size:11px;
+    padding:0 0 10px 0;
+    border-bottom:1px solid $lightgrey;
+    color:$grey;
+    @include transition (all 0.2s linear);
+
+    div.info-data {
+      float:left;
+      display:inline;
+    }
+  }
+
+  div.vote-buttons {
+    position:absolute;
+    left:-39px;
+    top:32px;
+
+    @include breakpoint(max-width 479px) {
+      left:auto;
+      right:30px;
+    }
+
+    a {
+      display:block;
+      width:24px;
+      position: relative;
+
+      &:hover {
+        opacity:0.4;
+      }
+
+      &:active {
+        top:1px;
+      }
+    }
+  }
+
+  &:hover div.info {
+    color:$darkgrey;
+    /*border-bottom:5px solid $lightgrey;*/
+  }
+}
+
+footer {
+  clear:both;
+  font-size:9px;
+  padding-top:250px;
+  color:$grey;
+
+  @include breakpoint(max-width 479px) {
+    padding:250px 30px 0;
+  }
 }

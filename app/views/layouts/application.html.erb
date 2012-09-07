@@ -2,14 +2,27 @@
 <html>
 <head>
   <title>Dossier</title>
-  <link href='//fonts.googleapis.com/css?family=Dosis:200,400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Karla:400,700' rel='stylesheet' type='text/css'>
+  <meta name="viewport" content="width=device-width">
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<div class="container">
+  <header>
+    <h1>Dossier</h1>
+
+    <nav><%= link_to 'New Link', new_link_path %></nav>
+  </header>
+
+  <%= yield %>
+
+  <footer>
+    <p>Brought to you by the good folks at <a href="http://roundhouseagency.com">Roundhouse</a></p>
+  </footer>
+</div>
 
 </body>
 </html>

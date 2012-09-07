@@ -3,6 +3,8 @@ Dossier::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  match 'links/:id/vote/:type' => 'links#vote'
+
   resources :links
 
   # The priority is based upon order of creation:

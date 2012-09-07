@@ -3,6 +3,7 @@ Dossier::Application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
 
+  match 'subscribe' => 'pages#subscribe'
   match 'links/:id/vote/:type' => 'links#vote'
 
   resources :links

@@ -14,7 +14,10 @@
   <header>
     <h1><%= link_to 'Dossier', root_path %></h1>
 
-    <nav><%= link_to 'New Link', new_link_path %></nav>
+    <nav>
+      <%= link_to 'New Link', new_link_path %>
+      <%= link_to 'Subscribe', '/subscribe' %>
+    </nav>
   </header>
 
   <%= yield %>

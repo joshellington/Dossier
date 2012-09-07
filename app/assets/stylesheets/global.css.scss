@@ -62,17 +62,18 @@ header {
     float:right;
     display: block;
     font-weight: bold;
-    font-size:11px;
+    font-size:13px;
 
     a {
-      padding:12px 14px;
+      padding:10px;
+      float:left;
       color:white;
-      display: block;
-      background:$accent;
+      display: inline-block;
+      margin-left:1px;
       text-decoration: none;
 
       &:hover {
-        background:$darkaccent;
+        background:$accent;
         color:white;
       }
     }
@@ -169,6 +170,10 @@ article.link {
   &:hover div.info {
     color:$darkgrey;
   }
+}
+
+div.page {
+  padding:30px 0;
 }
 
 footer {

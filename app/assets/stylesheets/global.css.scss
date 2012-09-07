@@ -225,7 +225,7 @@ form {
     font-size:15px;
 
     @include breakpoint(max-width 479px) {
-      width:auto;
+      width:100%;
     }
 
     &:focus {

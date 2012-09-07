@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= f.label :url %>
-    <%= f.text_field :url, :placeholder => 'Please include the whole thing' %>
+    <%= f.text_field :url, :placeholder => 'Please include the whole thing', :value => @query_url %>
   </div>
 
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title, :placeholder => 'Use whatever you see fit' %>
+    <%= f.text_field :title, :placeholder => 'Use whatever you see fit', :value => @query_title %>
   </div>
 
   <div class="field">

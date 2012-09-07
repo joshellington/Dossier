@@ -41,6 +41,8 @@ class LinksController < ApplicationController
   # GET /links/new.json
   def new
     @link = Link.new
+    @query_url = params[:url]
+    @query_title = params[:title]
 
     add_breadcrumb "New Link", new_link_path(@link)
 

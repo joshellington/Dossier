@@ -1,4 +1,8 @@
 Dossier::Application.routes.draw do
+  ActiveAdmin.routes(self)
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+
   resources :links
 
   # The priority is based upon order of creation:

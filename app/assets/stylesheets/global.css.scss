@@ -48,6 +48,14 @@ header {
     padding:10px 14px;
     font-size:13px;
     float:left;
+
+    a {
+      color:#fff;
+
+      &:hover {
+        color:$grey;
+      }
+    }
   }
 
   nav {

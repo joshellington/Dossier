@@ -10,4 +10,15 @@ class PagesController < ApplicationController
   def search
     render 'search'
   end
+
+  def about
+    text = File.open('./README.md') { |f| f.read }
+    @html = BlueCloth.new(text).to_html
+
+    render 'about'
+  end
+
+  def help
+    render 'help'
+  end
 end

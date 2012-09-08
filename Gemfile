@@ -36,6 +36,8 @@ gem 'postmark-rails'
 gem 'activeadmin'
 gem 'breadcrumbs_on_rails'
 
+gem 'bluecloth'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

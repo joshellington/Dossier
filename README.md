@@ -8,7 +8,7 @@ Includes (in-progress) email newsletter updates with customizable frequency. Boo
 
 Because bookmarklets are awesome and easy as pie (borrowed structure from [Pinboard](https://pinboard.in/)):
 
-`javascript:q=location.href;if(document.getSelection)%7Bd=document.getSelection();%7Delse%7Bd='';%7D;p=document.title;void(open('http://doss.herokuapp.com/links/new?url='+encodeURIComponent(q)+'&title='+encodeURIComponent(p),'Dossier','toolbar=no,scrollbars=yes,width=450,height=700'));`
+<a href="javascript:q=location.href;if(document.getSelection)%7Bd=document.getSelection();%7Delse%7Bd='';%7D;p=document.title;void(open('http://doss.herokuapp.com/links/new?url='+encodeURIComponent(q)+'&title='+encodeURIComponent(p),'Dossier','toolbar=no,scrollbars=yes,width=450,height=700'));">save to dossier</a>
 
 ## TODO
 

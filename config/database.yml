@@ -1,18 +1,24 @@
 
 development:
   adapter: postgresql
-  encoding: unicode
+  encoding: utf8
   host: localhost
-  port: 5432
   database: dossier_dev
-  pool: 5
   username: josh
   password:
 
-# test:
-#   adapter: postgresql
-#   encoding: unicode
-#   database: dossier_test
-#   pool: 5
-#   username: josh
-#   password:
+test:
+  adapter: postgresql
+  encoding: utf8
+  host: localhost
+  database: dossier_test
+  username: josh
+  password:
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  host: localhost
+  database: dossier_prod
+  username: josh
+  password:

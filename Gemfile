@@ -34,8 +34,11 @@ gem 'bourbon'
 gem 'jquery-rails'
 
 gem 'postmark-rails'
-gem 'activeadmin'
+gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
 gem 'breadcrumbs_on_rails'
+gem 'will_paginate'
+
+gem 'auto_html'
 
 gem 'bluecloth'
 

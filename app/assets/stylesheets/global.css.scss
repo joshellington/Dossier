@@ -147,7 +147,16 @@ article.link {
   p {
     font-size:16px;
     line-height: 1.4;
-    padding:10px 0;
+    padding:10px 0 0;
+  }
+
+  img, iframe {
+    max-width: 100%;
+  }
+
+  iframe {
+    width:100%;
+    height:400px;
   }
 
   blockquote {
@@ -161,7 +170,7 @@ article.link {
   div.info {
     overflow: hidden;
     font-size:11px;
-    padding:0 0 10px 0;
+    padding:10px 0;
     border-bottom:1px solid $lightgrey;
     color:$grey;
     @include transition (all 0.2s linear);
@@ -213,6 +222,28 @@ article.link {
     div.info {
       color:$darkgrey;
     }
+  }
+}
+
+div.pagination {
+  clear: both;
+  text-align: center;
+  padding:30px 0 0;
+  font-size:13px;
+
+  a, span, em {
+    font-style: normal;
+    font-weight: bold;
+    padding:5px 8px;
+
+    &.disabled {
+      display:none;
+    }
+  }
+
+  em {
+    background:$accent;
+    color: white;
   }
 }
 

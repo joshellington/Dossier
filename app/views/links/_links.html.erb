@@ -1,3 +1,5 @@
 <% @links.each do |link| %>
   <%= render 'single', :link => link %>
 <% end %>
+
+<%= will_paginate @links %>

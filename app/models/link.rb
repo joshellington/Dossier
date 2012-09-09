@@ -10,6 +10,8 @@ class Link < ActiveRecord::Base
   validates :url, :presence => true, :uniqueness => true, :format => {:with => URI::regexp(%w(http https))}
   validates :title, :presence => true
 
+  # self.per_page = 30
+
   def set_default_values
     self.vote_count ||= 0
     self.click_count ||= 0

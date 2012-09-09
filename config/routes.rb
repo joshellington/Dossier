@@ -6,9 +6,12 @@ Dossier::Application.routes.draw do
   match 'search' => 'pages#search'
   match 'help' => 'pages#help'
   match 'about' => 'pages#about'
+
   match 'links/:id/vote/:type' => 'links#vote'
   match 'links/:id/click' => 'links#click'
   match 'links/search' => 'links#search'
+  match 'category/:category' => 'links#category'
+
   match 'subscribers/newsletter' => 'subscribers#newsletter'
 
   resources :links

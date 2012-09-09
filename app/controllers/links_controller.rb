@@ -4,7 +4,7 @@ class LinksController < ApplicationController
   # GET /links
   # GET /links.json
   def index
-    @links = Link.order('created_at DESC').all
+    @links = Link.order('created_at DESC').paginate(:page => params[:page])
 
     respond_to do |format|
       format.html # index.html.erb
@@ -32,6 +32,18 @@ class LinksController < ApplicationController
     pp @links
 
     add_breadcrumb 'Search results', search_path(search)
+
+    respond_to do |format|
+      format.html # show.html.erb
+      format.json { render json: @links }
+    end
+  end
+
+  def category
+    @category = params[:category].capitalize
+    @links = Link.where(:categories => {:title => @category}).joins(:category)
+
+    add_breadcrumb @category, search_path(@category)
 
     respond_to do |format|
       format.html # show.html.erb

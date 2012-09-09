@@ -6,6 +6,10 @@ class Link < ActiveRecord::Base
   belongs_to :category
 
   before_create :set_default_values
+  before_save :check_for_duplicate
+
+  validates :url, :presence => true, :format => {:with => URI::regexp(%w(http https))}
+  validates :title, :presence => true
 
   def set_default_values
     self.vote_count ||= 0
@@ -22,5 +26,15 @@ class Link < ActiveRecord::Base
 
   def click
     self.click_count += 1
+  end
+
+  def check_for_duplicate
+    l = Link.find_by_url(self.url)
+
+    if l
+      false
+    else
+      true
+    end
   end
 end

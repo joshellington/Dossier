@@ -1,5 +1,8 @@
 module LinksHelper
   def url_format(url)
-    URI.parse(url).host.gsub('www.', '')
+    host = URI.parse(url).host
+    if host
+      host.gsub('www.', '')
+    end      
   end
 end

@@ -270,6 +270,23 @@ form {
       background:$darkaccent;
     }
   }
+
+  #error_explanation {
+    color:red;
+    padding-bottom:30px;
+
+    ul {
+      padding:0;
+      margin:0 0;
+    }
+
+    li {
+      font-size:13px;
+      text-transform: uppercase;
+      list-style: none;
+      padding-bottom:5px;
+    }
+  }
 }
 
 div.page {

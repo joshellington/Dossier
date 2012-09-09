@@ -9,9 +9,9 @@ $ ->
     cache: false
   )
 
-  $('.vote-button').live 'click', ->
+  $('.vote-buttons a').live 'click', ->
     href = $(this).attr('href')
-    count = $(this).parent().parent().find('.vote-count')
+    count = $(this).parent().find('.vote-count')
 
     $.getJSON(href, (d) ->
       count.text(d)

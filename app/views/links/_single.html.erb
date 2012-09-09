@@ -1,8 +1,9 @@
 <article class="link" data-url="<%= link.url %>">
   <div class="vote-buttons">
-    <!-- <a href="/links/<%= link.id %>/vote/up">
-      <%= image_tag('plus-icon.png', :width => 24) %>
-    </a> -->
+    <a href="/links/<%= link.id %>/vote/up" class="arrow-up"></a>
+    <div class="vote-count">
+      <%= link.vote_count %>
+    </div>
   </div>
 
   <h2><%= link_to link.title, link.url, "data-url" => link.url, "data-link-id" => link.id %> <span> &mdash; <%= link.category.title %></span></h2>
@@ -13,10 +14,6 @@
   
   <div class="info">
     <div class="info-data">
-      <a href="/links/<%= link.id %>/vote/up" class="vote-button">vote</a> &nbsp;/&nbsp;
-    </div>
-
-    <div class="info-data">
       <%= time_ago_in_words(link.created_at) %> ago &nbsp;/&nbsp;
     </div>
 
@@ -25,15 +22,7 @@
     </div>
 
     <div class="info-data">
-      <span class="vote-count"><%= link.vote_count %></span> votes &nbsp;/&nbsp;
-    </div>
-
-    <div class="info-data">
-      <span class="click-count"><%= link.click_count %></span> clicks &nbsp;/&nbsp;
-    </div>
-
-    <div class="info-data">
-      <%= link_to "0 comments", link_path(link, :anchor => "disqus_thread") %>
+      <span class="click-count"><%= link.click_count %></span> clicks
     </div>
   </div>
 

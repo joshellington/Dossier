@@ -5,7 +5,7 @@ $darkaccent: #86502E;
 $black: #222;
 $lightgrey: #eee;
 $grey: #aaa;
-$darkgrey: #777;
+$darkgrey: #666;
 
 $font: 'Karla', sans-serif;
 
@@ -128,6 +128,10 @@ article.link {
     a {
       color:$black;
 
+      &:visited {
+        color:$grey;
+      }
+
       &:hover {
         color:$accent;
       }
@@ -170,8 +174,9 @@ article.link {
 
   div.vote-buttons {
     position:absolute;
-    left:-39px;
-    top:32px;
+    left:-36px;
+    top:38px;
+    width:25px;
 
     @include breakpoint(max-width 479px) {
       left:auto;
@@ -180,8 +185,8 @@ article.link {
 
     a {
       display:block;
-      width:24px;
       position: relative;
+      margin:0 auto;
 
       &:hover {
         opacity:0.4;
@@ -191,14 +196,23 @@ article.link {
         top:1px;
       }
     }
+
+    div.vote-count {
+      font-size:13px;
+      text-align: center;
+      padding-top:5px;
+      color:$grey;
+    }
   }
 
   #disqus_thread {
     padding:30px 0;
   }
 
-  &:hover div.info {
-    color:$darkgrey;
+  &:hover {
+    div.info {
+      color:$darkgrey;
+    }
   }
 }
 
@@ -272,6 +286,42 @@ div.page {
   p {
     padding-bottom:10px;
   }
+}
+
+.arrow-up {
+  width: 0; 
+  height: 0; 
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  
+  border-bottom: 12px solid black;
+}
+
+.arrow-down {
+  width: 0; 
+  height: 0; 
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  
+  border-top: 20px solid #f00;
+}
+
+.arrow-right {
+  width: 0; 
+  height: 0; 
+  border-top: 60px solid transparent;
+  border-bottom: 60px solid transparent;
+  
+  border-left: 60px solid green;
+}
+
+.arrow-left {
+  width: 0; 
+  height: 0; 
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  
+  border-right:10px solid blue; 
 }
 
 footer {

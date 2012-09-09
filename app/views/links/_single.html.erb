@@ -9,7 +9,7 @@
   <h2><%= link_to link.title, link.url, "data-url" => link.url, "data-link-id" => link.id %> <span> &mdash; <%= link.category.title %></span></h2>
   
   <% unless link.body.empty? %>
-    <p><%= raw(link.body) %></p>
+    <p><%= link.body.html_safe %></p>
   <% end %>
   
   <div class="info">

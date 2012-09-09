@@ -87,7 +87,7 @@ class LinksController < ApplicationController
         format.html { redirect_to @link, notice: 'Link was successfully created.' }
         format.json { render json: @link, status: :created, location: @link }
       else
-        format.html { render action: "new", notice: 'Sorry, that entry is a duplicate' }
+        format.html { render action: "new", notice: 'Sorry, that entry is a duplicate.' }
         format.json { render json: @link.errors, status: :unprocessable_entity }
       end
     end

@@ -27,7 +27,15 @@ class LinksController < ApplicationController
 
   def search
     @query = params[:query]
-    @links = Link.where(["title LIKE :query", {:query => @query}])
+    pp 'QUERY MOFO /////////////////////////////'
+    pp @query
+    @links =  Link.search do
+                fulltext @query do
+                  fields(:title)
+                end
+              end
+    
+    pp @links
 
     add_breadcrumb 'Search results for "'+@query+'"', search_path(@query)
 

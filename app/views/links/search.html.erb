@@ -1,4 +1,4 @@
-<% if @links %>
+<% unless @links.empty? %>
   <%= render 'links' %>
 <% else %>
   <div class="page">

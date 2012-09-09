@@ -27,10 +27,10 @@ class Link < ActiveRecord::Base
     self.increment!(:click_count)
   end
 
-  searchable do
-    text :title
-    text :url
-    text :body
-    time :created_at
-  end
+  # searchable do
+  #   text :title
+  #   text :url
+  #   text :body
+  #   time :created_at
+  # end
 end

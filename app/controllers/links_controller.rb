@@ -41,7 +41,7 @@ class LinksController < ApplicationController
 
   def category
     @category = params[:category].capitalize
-    @links = Link.where(:categories => {:title => @category}).joins(:category).paginate(:page => params[:page])
+    @links = Link.order('created_at DESC').where(:categories => {:title => @category}).joins(:category).paginate(:page => params[:page])
 
     add_breadcrumb @category, search_path(@category)
 

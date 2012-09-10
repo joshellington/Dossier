@@ -28,7 +28,7 @@ class LinksController < ApplicationController
   def search
     search = params[:q]
 
-    @links = Link.where('title LIKE ?', "#{search}")
+    @links = Link.where('title LIKE ?', "#{search}").paginate(:page => params[:page])
     pp @links
 
     add_breadcrumb 'Search results', search_path(search)
@@ -41,7 +41,7 @@ class LinksController < ApplicationController
 
   def category
     @category = params[:category].capitalize
-    @links = Link.where(:categories => {:title => @category}).joins(:category)
+    @links = Link.where(:categories => {:title => @category}).joins(:category).paginate(:page => params[:page])
 
     add_breadcrumb @category, search_path(@category)
 

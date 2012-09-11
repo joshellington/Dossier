@@ -5,6 +5,14 @@
 
 $ ->
 
+  $('header a, h2 span a').live 'click', ->
+    $.pjax({
+      url: $(this).attr('href')
+      container: '#main'
+    })
+
+    false
+
   $.ajaxSetup(
     cache: false
   )

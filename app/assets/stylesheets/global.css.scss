@@ -31,7 +31,6 @@ small {
 
 div.container {
   @include outer-container;
-  padding:0 0 30px;
 }
 
 a {
@@ -51,9 +50,13 @@ header {
   h1 {
     margin:0;
     color:white;
-    padding:10px 14px;
+    padding:10px 0;
     font-size:13px;
     float:left;
+
+    @include breakpoint(max-width 479px, 1) {
+      padding:10px 20px;
+    }
 
     a {
       color:#fff;
@@ -88,9 +91,16 @@ header {
 
 nav.breadcrumb {
   background:$darkgrey;
-  padding:7px 14px;
-  font-size:11px;
-  color:white;
+  color:#fff;
+  padding:7px 0;
+
+  @include breakpoint(max-width 479px, 1) {
+    padding:7px 20px;
+  }
+
+  p {
+    font-size:11px;
+  }
 
   a {
     color:white;
@@ -100,7 +110,7 @@ nav.breadcrumb {
 
 p#notice {
   background:$accent;
-  padding:7px 14px;
+  padding:7px 20px;
   font-size:11px;
   color:white;
   font-weight:bold;
@@ -113,7 +123,7 @@ article.link {
   @include transition (all 0.2s linear);
 
   @include breakpoint(max-width 479px, 1) {
-    padding:30px 30px 0 30px;
+    padding:20px 20px 0 20px;
   }
 
   h2 {
@@ -189,7 +199,7 @@ article.link {
 
     @include breakpoint(max-width 479px) {
       left:auto;
-      right:30px;
+      right:20px;
     }
 
     a {
@@ -324,7 +334,7 @@ div.page {
   padding:30px 0;
 
   @include breakpoint(max-width 479px, 1) {
-    padding:30px 30px 0 30px;
+    padding:20px 20px 0 20px;
   }
 
   h3 {
@@ -376,6 +386,7 @@ footer {
   clear:both;
   font-size:11px;
   padding-top:250px;
+  padding-bottom:30px;
   color:$grey;
 
   @include breakpoint(max-width 479px) {

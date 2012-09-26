@@ -10,8 +10,8 @@
 </head>
 <body>
 
-<div class="container">
-  <header>
+<header>
+  <div class="container">
     <h1><%= link_to 'Dossier', root_path %></h1>
 
     <nav>
@@ -19,9 +19,16 @@
       <%= link_to 'Subscribe', new_subscriber_path %>
       <%= link_to 'Search', search_path %>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <nav class="breadcrumb"><%= render_breadcrumbs :separator => ' / ' %></nav>
+<nav class="breadcrumb">
+  <div class="container">
+    <p><%= render_breadcrumbs :separator => ' / ' %></p>
+  </div>
+</nav>
+
+<div class="container">
 
   <% if notice %>
     <p id="notice"><%= notice %></p>
@@ -30,7 +37,7 @@
   <%= yield %>
 
   <footer>
-    <p style="float:left;"><%= link_to 'About', about_path %> / <%= link_to 'Help', help_path %></p>
+    <p style="float:left;"><%= link_to 'Help', help_path %></p>
     <p style="float:right;">Brought to you by the good folks at <a href="http://roundhouseagency.com">Roundhouse</a></p>
   </footer>
 </div>

@@ -1,0 +1,11 @@
+<article class="user">
+  <h2><%= image_tag user.picture %> <%= user.name %></h2>
+
+  <h3>Submitted links</h3>
+
+  <div id="user-submitted-links">
+    <% user.links.each do |link| %>
+      <%= render 'links/single', :link => link %>
+    <% end %>
+  </div>
+</article>

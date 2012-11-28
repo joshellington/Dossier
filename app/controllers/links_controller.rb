@@ -17,6 +17,9 @@ class LinksController < ApplicationController
   def show
     @link = Link.find(params[:id])
 
+    pp 'CONTROLLER ::::::'
+    pp params.inspect
+
     add_breadcrumb @link.title, link_path(@link)
 
     respond_to do |format|

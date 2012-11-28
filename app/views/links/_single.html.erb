@@ -32,11 +32,15 @@
     </div>
 
     <div class="info-data">
-      <%= link_to "0 comments", link_path(link, :anchor => "disqus_thread") %>
+      <%= link_to "0 comments", link_path(link, :anchor => "disqus_thread") %>  &nbsp;/&nbsp;
+    </div>
+
+    <div class="info-data">
+      by <%= link_to link.user.name.downcase, user_path(link.user) %>
     </div>
   </div>
 
-  <% if controller.action_name == 'show' %>
+  <% if params[:action] == 'show' && params[:controller] == 'links' %>
     <div id="disqus_thread"></div>
 
     <script type="text/javascript">

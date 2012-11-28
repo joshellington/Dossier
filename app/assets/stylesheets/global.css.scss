@@ -116,7 +116,7 @@ p#notice {
   font-weight:bold;
 }
 
-article.link {
+article.link, article.user {
   @include span-columns(12);
   position: relative;
   padding-top:30px;

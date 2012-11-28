@@ -5,3 +5,12 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+puts 'Creating categories...'
+Category.destroy_all
+Category.create!(:id => 0, :title => 'Development')
+Category.create!(:id => 1, :title => 'Design')
+Category.create!(:id => 2, :title => 'Marketing')
+Category.create!(:id => 3, :title => 'General')
+puts 'Done.'

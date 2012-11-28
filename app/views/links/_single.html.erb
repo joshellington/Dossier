@@ -41,7 +41,7 @@
 
     <% if current_user == link.user %>
       <div class="info-data">
-        &nbsp;/&nbsp;<%= link_to 'delete', link_path(link), :confirm => 'Are you sure?', :method => :delete %>
+        &nbsp;/&nbsp;<%= link_to 'delete', link_path(link), :confirm => 'Are you sure?', :method => :delete %> <!-- &nbsp;/&nbsp;<%= link_to 'edit', edit_link_path(link) %> -->
       </div>   
     <% end %>
   </div>

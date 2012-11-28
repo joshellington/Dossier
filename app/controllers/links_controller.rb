@@ -72,6 +72,13 @@ class LinksController < ApplicationController
   # GET /links/1/edit
   def edit
     @link = Link.find(params[:id])
+
+    add_breadcrumb "Edit Link", edit_link_path(@link)
+
+    respond_to do |format|
+      format.html # new.html.erb
+      format.json { render json: @link }
+    end
   end
 
   def vote
@@ -130,7 +137,9 @@ class LinksController < ApplicationController
   # DELETE /links/1.json
   def destroy
     @link = Link.find(params[:id])
-    @link.destroy
+    if current_user == @link.user
+      @link.destroy
+    end
 
     respond_to do |format|
       format.html { redirect_to links_url }

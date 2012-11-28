@@ -4,6 +4,7 @@ require 'rails/all'
 
 require 'uri'
 require 'pp'
+require 'open-uri'
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line

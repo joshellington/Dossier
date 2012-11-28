@@ -19,10 +19,9 @@
       <%= link_to 'Subscribe', new_subscriber_path %>
       <%= link_to 'Search', search_path %>
       <% if current_user %>
-        Signed in as <%= current_user.name %>!
         <%= link_to "Sign out", signout_path %>
       <% else %>
-        <%= link_to "Sign in with Basecamp", "/auth/37signals" %>
+        <%= link_to "Sign in", "/auth/37signals" %>
       <% end %>
     </nav>
   </div>

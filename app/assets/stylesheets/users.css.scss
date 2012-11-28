@@ -1,3 +1,25 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+article.user {
+  aside.profile {
+    overflow: hidden;
+    padding-bottom:30px;
+    margin-bottom:30px;
+    border-bottom:1px solid $lightgrey;
+
+    img {
+      border-radius:35px;
+      margin-right:15px;
+      vertical-align: middle;
+    }
+
+    h2 {
+      span {
+        // display: block;
+      }
+    }
+  }
+}

@@ -8,7 +8,7 @@ module LinksHelper
 
   def embed_media(url)
     allowed = /img|iframe/
-    res = auto_html(url) {html_escape; image; youtube; simple_format}
+    res = auto_html(url) {html_escape; image; youtube; soundcloud; twitter; simple_format}
 
     if res =~ allowed
       res

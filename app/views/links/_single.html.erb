@@ -38,6 +38,12 @@
     <div class="info-data">
       by <%= link_to link.user.name.downcase, user_path(link.user) %>
     </div>
+
+    <% if current_user == link.user %>
+      <div class="info-data">
+        &nbsp;/&nbsp;<%= link_to 'delete', link_path(link), :confirm => 'Are you sure?', :method => :delete %>
+      </div>   
+    <% end %>
   </div>
 
   <% if params[:action] == 'show' && params[:controller] == 'links' %>

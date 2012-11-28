@@ -1,7 +1,10 @@
 <article class="user">
-  <h2><%= image_tag user.picture %> <%= user.name %></h2>
+  <aside class="profile">
 
-  <h3>Submitted links</h3>
+    <h2><%= image_tag user.picture, {:width => 70, :height => 70} %> <%= user.name %> <span> <%= mail_to user.email, user.email, :encode => "hex" %></span></h2>
+  </aside>
+
+  <h3><%= pluralize(user.links.count, 'link') %></h3>
 
   <div id="user-submitted-links">
     <% user.links.each do |link| %>

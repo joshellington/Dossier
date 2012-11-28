@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :picture, :provider, :uid
 
+  has_many :links
+
   def self.from_omniauth(auth)
     auth["uid"] = auth["uid"].to_s
     where(auth.slice("provider", "uid")).first || create_from_omniauth(auth)
@@ -18,7 +20,7 @@ class User < ActiveRecord::Base
 
   def self.get_picture(auth)
     account_id = nil
-    
+
     auth["extra"]["accounts"].each do |a|
       if a["product"] == "bcx"
         account_id = a["id"].to_s

@@ -14,6 +14,10 @@ Dossier::Application.routes.draw do
 
   match 'subscribers/newsletter' => 'subscribers#newsletter'
 
+  match 'auth/:provider/callback', to: 'sessions#create'
+  match 'auth/failure', to: redirect('/')
+  match 'signout', to: 'sessions#destroy', as: 'signout'
+
   resources :links
   resources :subscribers
 

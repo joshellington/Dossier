@@ -1,0 +1,20 @@
+development:
+  aws_key: ###
+  aws_secret: ###
+  aws_bucket: ###
+  signals_id: 70432f540aa0464d831678db86fdc2717a5d7962
+  signals_key: 9a9780d2602894be1cfa6213c0aef79de74ed776
+
+staging:
+  aws_key: ###
+  aws_secret: ###
+  aws_bucket: ###
+  signals_id: 70432f540aa0464d831678db86fdc2717a5d7962
+  signals_key: 9a9780d2602894be1cfa6213c0aef79de74ed776
+
+production:
+  aws_key: ###
+  aws_secret: ###
+  aws_bucket: ###
+  signals_id: 70432f540aa0464d831678db86fdc2717a5d7962
+  signals_key: 9a9780d2602894be1cfa6213c0aef79de74ed776

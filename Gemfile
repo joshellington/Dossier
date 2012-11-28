@@ -42,6 +42,8 @@ gem 'auto_html'
 
 gem 'bluecloth'
 
+gem 'omniauth-37signals'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

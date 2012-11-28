@@ -3,7 +3,7 @@
 
   <% if current_user %>
     <%= render 'form' %>
+  <% else %>
+    <p>You must have a Roundhouse Basecamp account and <%= link_to "sign in", "/auth/37signals" %> before submitting a link.</p>
   <% end %>
-
-  <%= link_to 'Back', links_path %>
 </div>

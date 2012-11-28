@@ -28,3 +28,8 @@ $ ->
     )
 
     false
+
+  $('a.show-media').click ->
+    $(this).parent().find('.media-content').slideToggle(200)
+
+    false

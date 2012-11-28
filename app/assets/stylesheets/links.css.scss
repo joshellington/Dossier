@@ -3,3 +3,21 @@
 div.new-link {
   padding:30px 0;
 }
+
+a.show-media {
+  background:$accent;
+  color:white;
+  padding:5px 10px;
+  font-size:11px;
+  font-weight: bold;
+  display: inline-block;
+  margin:10px 0 0;
+
+  &:hover {
+    background:$darkaccent;
+  }
+}
+
+div.media-content {
+  display: none;
+}

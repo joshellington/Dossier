@@ -14,7 +14,12 @@
 
   <% if embed_media(link.url) %>
     <div class="media">
-      <%= embed_media(link.url) %>
+      <% if params[:action] == 'show' && params[:controller] == 'links' %>
+        <%= embed_media(link.url) %>
+      <% else %>
+        <a href="#" class="show-media">Show media</a>
+        <div class="media-content"><%= embed_media(link.url) %></div>
+      <% end %>
     </div>
   <% end %>
   

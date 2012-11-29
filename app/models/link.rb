@@ -1,6 +1,7 @@
 class Link < ActiveRecord::Base
   attr_accessible :category_id, :click_count, :body, :title, :url, :vote_count, :user_id
 
+  acts_as_commentable
   has_time_span_scopes
   
   belongs_to :category

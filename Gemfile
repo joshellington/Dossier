@@ -44,7 +44,7 @@ gem 'bluecloth'
 
 gem 'omniauth-37signals'
 
-gem 'acts_as_commentable', '3.0.1'
+gem 'acts_as_commentable'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

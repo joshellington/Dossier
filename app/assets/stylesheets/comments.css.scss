@@ -1,0 +1,51 @@
+// Place all the styles related to the comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$imagewidth: 58px;
+
+#comments {
+  margin:30px 0 0;
+
+  .comment {
+    margin-bottom:15px;
+    padding:15px 0;
+    border-bottom:1px solid $lightgrey;
+    overflow: hidden;
+
+    .picture {
+      float:left;
+      display:inline;
+      margin-right:15px;
+
+      img {
+        border-radius:($imagewidth / 2);
+        vertical-align: middle;
+      }
+    }
+
+    .content {
+      margin:5px 0;
+      line-height: 1.4;
+      padding-left:($imagewidth + 15);
+    }
+
+    .meta {
+      font-size:11px;
+      color:$grey;
+      padding-top:10px;
+      padding-left:($imagewidth + 15);
+    }
+  }
+}
+
+#new_comment {
+  .field {
+    width:auto;
+  }
+  textarea {
+    width:100%;
+    padding:10px;
+  }
+}

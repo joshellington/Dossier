@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :name, :picture, :provider, :uid
 
   has_many :links
+  has_many :comments
 
   def self.from_omniauth(auth)
     auth["uid"] = auth["uid"].to_s

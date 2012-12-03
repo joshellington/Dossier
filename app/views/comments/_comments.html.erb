@@ -1,0 +1,23 @@
+<div id="comments">
+  <h2>Comments</h2>
+
+  <% @comments.each do |comment| %>
+    <% if comment.user %>
+      <div class="comment">
+        <div class="picture">
+          <%= link_to user_path(comment.user) do %>
+            <%= image_tag comment.user.picture, :width => 58 %>
+          <% end %>
+        </div>
+
+        <div class="content">
+          <strong><%= link_to comment.user.name, user_path(comment.user) %></strong><%= simple_format comment.body %>
+        </div>
+
+        <div class="meta">
+          Posted <%= time_ago_in_words comment.created_at %> ago
+        </div>
+      </div>
+    <% end %>
+  <% end %>
+</div>

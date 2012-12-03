@@ -19,7 +19,10 @@ Dossier::Application.routes.draw do
   match 'auth/failure', to: redirect('/')
   match 'signout', to: 'sessions#destroy', as: 'signout'
 
-  resources :links
+  resources :links do
+    resources :comments
+  end
+  
   resources :subscribers
   resources :users
 

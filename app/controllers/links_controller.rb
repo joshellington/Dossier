@@ -16,9 +16,9 @@ class LinksController < ApplicationController
   # GET /links/1.json
   def show
     @link = Link.find(params[:id])
-
-    pp 'CONTROLLER ::::::'
-    pp params.inspect
+    @commentable = @link
+    @comments = @commentable.comments
+    @comment = Comment.new
 
     add_breadcrumb @link.title, link_path(@link)
 

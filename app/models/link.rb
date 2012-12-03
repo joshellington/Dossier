@@ -5,6 +5,7 @@ class Link < ActiveRecord::Base
   
   belongs_to :category
   belongs_to :user
+  has_many :comments, as: :commentable
 
   before_create :set_default_values
 

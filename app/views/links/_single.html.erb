@@ -48,7 +48,10 @@
   </div>
 
   <% if params[:action] == 'show' && params[:controller] == 'links' %>
-    <%= render 'comments/comments' %>
-    <%= render 'comments/form' %>
+    <% if current_user %>
+      <%= render 'comments/comments' %>
+      <%= render 'comments/form' %>
+    <% end %>
+      <p>You must be <%= link_to "signed in", "/auth/37signals" %> to post a comment.</p>
   <% end %>
 </article>

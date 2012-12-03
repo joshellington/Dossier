@@ -25,15 +25,15 @@
   
   <div class="info">
     <div class="info-data">
-      <%= time_ago_in_words(link.created_at) %> ago &nbsp;/&nbsp;
+      <%= time_ago_in_words(link.created_at) %> ago /&nbsp;
     </div>
 
     <div class="info-data">
-      <%= url_format(link.url) %> &nbsp;/&nbsp;
+      <%= url_format(link.url) %> /&nbsp;
     </div>
 
     <div class="info-data">
-      <%= link_to pluralize(link.comments.count, 'comment'), link_path(link, :anchor => 'comments') %> &nbsp;/&nbsp;
+      <%= link_to pluralize(link.comments.count, 'comment'), link_path(link, :anchor => 'comments') %> /&nbsp;
     </div>
 
     <div class="info-data">

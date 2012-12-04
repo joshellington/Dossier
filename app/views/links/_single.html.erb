@@ -1,4 +1,4 @@
-<article class="link" data-url="<%= link.url %>">
+<article class="link" data-url="<%= link.url %>" data-id="<%= link.id %>">
   <div class="vote-buttons">
     <a href="/links/<%= link.id %>/vote/up" class="arrow-up"></a>
     <div class="vote-count">
@@ -17,8 +17,12 @@
       <% if params[:action] == 'show' && params[:controller] == 'links' %>
         <%= embed_media(link.url) %>
       <% else %>
-        <a href="#" class="show-media">Show media</a>
-        <div class="media-content"><%= embed_media(link.url) %></div>
+        <script>
+        var link_<%= link.id %>_embed_html = '<%= j embed_media(link.url) %>';
+        </script>
+
+        <a href="#" class="show-media" data-id="<%= link.id %>">Show media</a>
+        <div class="media-content"></div>
       <% end %>
     </div>
   <% end %>

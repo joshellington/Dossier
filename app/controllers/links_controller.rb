@@ -35,7 +35,7 @@ class LinksController < ApplicationController
       @links = Link.search(query).paginate(:page => params[:page])
     end
 
-    add_breadcrumb "Search results for '#{query}'", search_path(query)
+    add_breadcrumb "Search results for '#{query}'", root_path
 
     respond_to do |format|
       format.html # show.html.erb

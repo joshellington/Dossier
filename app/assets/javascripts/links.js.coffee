@@ -34,7 +34,8 @@ $ ->
     _current_id = _this.data('id')
     _embed_html = window['link_'+_current_id+'_embed_html']
 
-    _this.parent().find('.media-content').slideToggle(200, ->
+    _this.parent().find('.media-content').toggle(0, ->
+      _this.hide()
       $(this).html(_embed_html)
     )
 

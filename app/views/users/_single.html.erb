@@ -4,9 +4,19 @@
     <h2><%= image_tag user.picture, {:width => 70, :height => 70} %> <%= user.name %> <span> <%= mail_to user.email, user.email, :encode => "hex" %></span></h2>
   </aside>
 
-  <h3><%= pluralize(user.links.count, 'link') %> submitted</h3>
+  <h3>Recent comments</h3>
+
+  <div id="comments">
+    <% @recent_comments.each do |comment| %>
+      <% @link = Link.find_by_id(comment.commentable_id) %>
+      <h4>Posted on: <%= link_to @link.title, link_path(@link) %></h4>
+      <%= render 'comments/single', :comment => comment %>
+    <% end %>
+  </div>
 
   <div id="user-submitted-links">
+    <h3><%= pluralize(user.links.count, 'link') %> submitted</h3>
+    
     <% user.links.each do |link| %>
       <%= render 'links/single', :link => link %>
     <% end %>

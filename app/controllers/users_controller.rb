@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   # GET /users/1.json
   def show
     @user = User.find(params[:id])
+    @recent_comments = Comment.where(:user_id => @user.id).limit(3)
 
     add_breadcrumb @user.name, user_path(@user)
 

@@ -32,7 +32,7 @@ class LinksController < ApplicationController
     query = params[:q].to_s
 
     if query
-      @links = Link.search(query)
+      @links = Link.search(query).paginate(:page => params[:page])
     end
 
     add_breadcrumb "Search results for '#{query}'", search_path(query)

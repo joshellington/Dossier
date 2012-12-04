@@ -11,13 +11,22 @@
 <body>
 
 <header>
+  <div class="search-form">
+    <%= form_tag('/links/search', :method => 'get') do %>
+      <div class="container">
+        <%= text_field_tag :q, nil, :placeholder => "Type your keywords..." %>
+      </div>
+      <%= submit_tag 'Go', :class => 'hidden' %>
+    <% end %>
+  </div>
+
   <div class="container">
     <h1><%= link_to 'Dossier', root_path %></h1>
 
     <nav>
       <%= link_to 'New Link', new_link_path %>
       <!-- <%= link_to 'Subscribe', new_subscriber_path %> -->
-      <%= link_to 'Search', search_path %>
+      <%= link_to 'Search', search_path, :id => 'open-search-form' %>
       <% if current_user %>
         <%= link_to signout_path do %>
           Sign out

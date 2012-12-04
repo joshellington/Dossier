@@ -92,6 +92,46 @@ header {
       }
     }
   }
+
+  .search-form {
+    display:none;
+
+    form {
+      padding:0;
+      margin:0;
+      background:$accent;
+    }
+
+    input {
+      margin:0;
+      background:$accent;
+      font-size:24px;
+      padding:15px 0;
+      color:white;
+      border:0;
+      outline:0;
+
+      &:focus {
+        @include box-shadow(0 0 0 0 hsla(0, 0%, 0%, 0.05));
+      }
+    }
+
+    ::-webkit-input-placeholder {
+      color: white;
+    }
+
+    :-moz-placeholder {
+      color: white;
+    }
+
+    :-ms-input-placeholder {
+      color: white;
+    }
+
+    .hidden {
+      display:none;
+    }    
+  }
 }
 
 nav.breadcrumb {

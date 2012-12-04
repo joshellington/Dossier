@@ -55,7 +55,8 @@
     <% if current_user %>
       <%= render 'comments/comments' %>
       <%= render 'comments/form' %>
-    <% end %>
+    <% else %>
       <p>You must be <%= link_to "signed in", "/auth/37signals" %> to post a comment.</p>
+    <% end %>
   <% end %>
 </article>

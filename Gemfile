@@ -38,11 +38,17 @@ gem 'activeadmin', :git => 'git://github.com/gregbell/active_admin.git'
 gem 'breadcrumbs_on_rails'
 gem 'will_paginate'
 
+# Auto embed
 gem 'auto_html'
 
+# Markdown
 gem 'bluecloth'
 
+# User auth
 gem 'omniauth-37signals'
+
+# Search
+gem 'texticle', :git => "git://github.com/texticle/texticle.git", :require => 'texticle/rails'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

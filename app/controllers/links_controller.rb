@@ -29,12 +29,13 @@ class LinksController < ApplicationController
   end
 
   def search
-    search = params[:q]
+    query = params[:q].to_s
 
-    @links = Link.where('title LIKE ?', "#{search}").paginate(:page => params[:page])
-    pp @links
+    if query
+      @links = Link.search(query)
+    end
 
-    add_breadcrumb 'Search results', search_path(search)
+    add_breadcrumb "Search results for '#{query}'", search_path(query)
 
     respond_to do |format|
       format.html # show.html.erb

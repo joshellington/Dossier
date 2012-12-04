@@ -41,7 +41,7 @@
     </div>
 
     <div class="info-data">
-      by <%= link_to link.user.name.downcase, user_path(link.user) %>
+      by <%= link_to link.user.name, user_path(link.user) %>
     </div>
 
     <% if current_user == link.user %>

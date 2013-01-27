@@ -4,6 +4,7 @@ development:
   aws_bucket: ###
   signals_id: 70432f540aa0464d831678db86fdc2717a5d7962
   signals_secret: 9a9780d2602894be1cfa6213c0aef79de74ed776
+  diffbot: 2c6452c40aed5176969bdc31587b5269
 
 staging:
   aws_key: ###
@@ -11,6 +12,7 @@ staging:
   aws_bucket: ###
   signals_id: 70432f540aa0464d831678db86fdc2717a5d7962
   signals_secret: 9a9780d2602894be1cfa6213c0aef79de74ed776
+  diffbot: 2c6452c40aed5176969bdc31587b5269
 
 production:
   aws_key: ###
@@ -18,3 +20,4 @@ production:
   aws_bucket: ###
   signals_id: db3ea48db7e588e8e3a34bd30d786d703d74cd60
   signals_secret: 21a2cb1177fcb76fc248d86ee10f64879691f480
+  diffbot: 2c6452c40aed5176969bdc31587b5269

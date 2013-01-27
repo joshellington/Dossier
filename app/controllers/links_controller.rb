@@ -47,7 +47,7 @@ class LinksController < ApplicationController
     @category = params[:category].capitalize
     @links = Link.order('created_at DESC').where(:categories => {:title => @category}).joins(:category).paginate(:page => params[:page])
 
-    add_breadcrumb @category, search_path(@category)
+    add_breadcrumb @category, category_path(@category)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -99,6 +99,15 @@ class LinksController < ApplicationController
 
     respond_to do |format|
       format.json { render json: @link }
+    end
+  end
+
+  def fetch
+    biff = Biffbot::Base.new(APP_CONFIG["diffbot"])
+    @res = biff.parse params[:url], {:summary => false, :comments => false}
+
+    respond_to do |format|
+      format.json { render json: @res }
     end
   end
 

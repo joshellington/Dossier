@@ -7,10 +7,14 @@
   <h3>Recent comments</h3>
 
   <div id="comments">
-    <% @recent_comments.each do |comment| %>
-      <% @link = Link.find_by_id(comment.commentable_id) %>
-      <h4>Posted on: <%= link_to @link.title, link_path(@link) %></h4>
-      <%= render 'comments/single', :comment => comment %>
+    <% if @recent_comments.count %>
+      <% @recent_comments.each do |comment| %>
+        <% @link = Link.find_by_id(comment.commentable_id) %>
+        <h4>Posted on: <%= link_to @link.title, link_path(@link) %></h4>
+        <%= render 'comments/single', :comment => comment %>
+      <% end %>
+    <% else %>
+      <p>No comments yet.</p>
     <% end %>
   </div>
 

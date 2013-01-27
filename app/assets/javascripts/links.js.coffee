@@ -40,3 +40,19 @@ $ ->
     )
 
     false
+
+  $('#link_url').blur ->
+    url = $(this).val()
+    title = $('#link_title')
+    
+    if url.length > 8 and title.val().length < 3
+      title.attr(
+        disabled: 'disabled'
+        value: 'Loading title...'
+      )
+
+      $.getJSON('/links/fetch.json?url='+url, (d) ->
+        console.log(d)
+        title.val(d.title)
+        title.removeAttr('disabled')
+      )

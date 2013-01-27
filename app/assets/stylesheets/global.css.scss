@@ -6,7 +6,7 @@ $callOut: #c6c4c5;
 $accent: #e0874e;
 $darkaccent: #df874e;
 $tileAccent: #DD854D;
-$lightgrey: #909090;
+$lightgrey: #ddd;
 $grey: #434342;
 $darkgrey: #434342;
 $black: #333;
@@ -20,7 +20,7 @@ $mrsEaves: 'MrsEavesRoman';
 $font: $dinPro, sans-serif;
 
 body {
-  font-family: $dinProMedium;
+  font-family: $dinPro;
   margin:0;padding: 0;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -40,11 +40,12 @@ small {
 }
 
 div.container {
-  @include outer-container;
+  max-width:650px;
+  margin:0 auto;
 }
 
 a {
-  @include transition (all 0.2s linear);
+  @include transition (all 0.1s linear);
   color:$accent;
   text-decoration: none;
 
@@ -56,7 +57,7 @@ a {
 header {
   background:#000 url(http://roundhouseagency.com/assets/header-bg.jpg) repeat-x bottom;
   overflow: hidden;
-  text-transform: uppercase;
+  font-family: $dinProMedium;
 
   h1 {
     margin:0;
@@ -184,6 +185,7 @@ article.link, article.user {
   }
 
   h2 {
+    font-family: $dinProMedium;
     font-size:26px;
     margin:0;
     padding:0;

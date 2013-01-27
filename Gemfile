@@ -50,6 +50,9 @@ gem 'omniauth-37signals'
 # Search
 gem 'texticle', :git => "git://github.com/texticle/texticle.git", :require => 'texticle/rails'
 
+# Diffbot
+gem 'biffbot'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

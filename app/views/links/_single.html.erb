@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  <h2><%= link_to link.title, link.url, "data-url" => link.url, "data-link-id" => link.id, :class => "track-count" %> <span> &mdash; <%= link_to link.category.title, "/category/#{link.category.title.downcase}" %></span></h2>
+  <h2><%= link_to link.title, link.url, "data-url" => link.url, "data-link-id" => link.id, :class => "track-count" %> <span> &mdash; <%= link_to link.category.title, category_path(link.category.title) %></span></h2>
   
   <% unless link.body.empty? %>
     <p><%= link.body.html_safe %></p>

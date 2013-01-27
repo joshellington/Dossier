@@ -38,6 +38,12 @@
   </div>
 </header>
 
+<% if notice %>
+  <div class="container">
+    <p id="notice"><%= notice %></p>
+  </div>
+<% end %>
+
 <nav class="breadcrumb">
   <div class="container">
     <p><%= render_breadcrumbs :separator => ' / ' %></p>
@@ -45,10 +51,6 @@
 </nav>
 
 <div class="container">
-
-  <% if notice %>
-    <p id="notice"><%= notice %></p>
-  <% end %>
 
   <%= yield %>
 

@@ -11,7 +11,8 @@ Dossier::Application.routes.draw do
   match 'links/:id/vote/:type' => 'links#vote'
   match 'links/:id/click' => 'links#click'
   match 'links/search' => 'links#search'
-  match 'category/:category' => 'links#category'
+  match 'links/fetch' => 'links#fetch'
+  match 'category/:category' => 'links#category', as: 'category'
 
   match 'subscribers/newsletter' => 'subscribers#newsletter'
 

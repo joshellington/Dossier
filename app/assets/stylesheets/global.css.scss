@@ -1,16 +1,26 @@
+$nav: #979797;
+$navActive: #e0874e;
+$body: #fefefe;
+$body2: #6a6a6a;
+$callOut: #c6c4c5;
+$accent: #e0874e;
+$darkaccent: #df874e;
+$tileAccent: #DD854D;
+$lightgrey: #909090;
+$grey: #434342;
+$darkgrey: #434342;
+$black: #333;
 
+$dinPro: 'dinPro';
+$dinProMedium: 'dinProMedium';
+$dinProBold: 'dinProBold';
+$dinProBlack: 'dinProBlack';
+$mrsEaves: 'MrsEavesRoman';
 
-$accent: #E1874D;
-$darkaccent: #86502E;
-$black: #222;
-$lightgrey: #eee;
-$grey: #aaa;
-$darkgrey: #666;
-
-$font: 'Karla', sans-serif;
+$font: $dinPro, sans-serif;
 
 body {
-  font-family: $font;
+  font-family: $dinProMedium;
   margin:0;padding: 0;
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
@@ -44,8 +54,9 @@ a {
 }
 
 header {
-  background:#000;
+  background:#000 url(http://roundhouseagency.com/assets/header-bg.jpg) repeat-x bottom;
   overflow: hidden;
+  text-transform: uppercase;
 
   h1 {
     margin:0;
@@ -135,8 +146,9 @@ header {
 }
 
 nav.breadcrumb {
-  background:$darkgrey;
-  color:#fff;
+  font-family:$dinPro;
+  background:white;
+  color:$darkgrey;
   padding:7px 0;
 
   @include breakpoint(max-width 479px, 1) {
@@ -148,7 +160,7 @@ nav.breadcrumb {
   }
 
   a {
-    color:white;
+    color:$darkgrey;
     font-weight: bold;
   }
 }

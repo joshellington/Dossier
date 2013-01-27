@@ -10,12 +10,15 @@ class User < ActiveRecord::Base
   end
 
   def self.create_from_omniauth(auth)
-    create! do |user|
-      user.provider = auth["provider"]
-      user.uid = auth["uid"].to_s
-      user.name = auth["info"]["name"]
-      user.email = auth["info"]["email"]
-      user.picture = self.get_picture(auth)
+    pp auth
+    if auth["extra"]["accounts"].any? { |a| a[:name] == 'roundhouse' }
+      create! do |user|
+        user.provider = auth["provider"]
+        user.uid = auth["uid"].to_s
+        user.name = auth["info"]["name"]
+        user.email = auth["info"]["email"]
+        user.picture = self.get_picture(auth)
+      end
     end
   end
 

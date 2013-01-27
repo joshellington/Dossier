@@ -4,16 +4,16 @@ development:
   encoding: utf8
   host: localhost
   database: dossier_dev
-  username: joshellington
+  username: josh
   password:
 
-test:
-  adapter: postgresql
-  encoding: utf8
-  host: localhost
-  database: dossier_test
-  username: joshellington
-  password:
+# test:
+#   adapter: postgresql
+#   encoding: utf8
+#   host: localhost
+#   database: dossier_test
+#   username: joshellington
+#   password:
 
 production:
   adapter: postgresql

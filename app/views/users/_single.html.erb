@@ -20,9 +20,9 @@
 
   <div id="user-submitted-links">
     <h3><%= pluralize(user.links.count, 'link') %> submitted</h3>
-    
-    <% user.links.each do |link| %>
-      <%= render 'links/single', :link => link %>
-    <% end %>
   </div>
 </article>
+
+<% user.links.each do |link| %>
+  <%= render 'links/single', :link => link %>
+<% end %>

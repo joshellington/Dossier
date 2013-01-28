@@ -25,6 +25,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+  background:#eee;
 }
 
 h1,h2,h3,h4,h5,h6,p {margin:0;padding:0;}
@@ -151,6 +152,7 @@ nav.breadcrumb {
   background:white;
   color:$darkgrey;
   padding:7px 0;
+  margin-bottom:1px;
 
   @include breakpoint(max-width 479px, 1) {
     padding:7px 20px;
@@ -177,11 +179,14 @@ p#notice {
 article.link, article.user {
   @include span-columns(12);
   position: relative;
-  padding-top:30px;
+  padding:30px;
   @include transition (all 0.2s linear);
+  
+  background:#fff;
+  border-bottom:1px solid #eee;
 
   @include breakpoint(max-width 479px, 1) {
-    padding:20px 20px 0 20px;
+    padding:20px;
   }
 
   h2 {
@@ -239,7 +244,6 @@ article.link, article.user {
     overflow: hidden;
     font-size:11px;
     padding:10px 0;
-    border-bottom:1px solid $lightgrey;
     color:$grey;
     @include transition (all 0.2s linear);
 
